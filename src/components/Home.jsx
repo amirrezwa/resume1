@@ -1,52 +1,52 @@
-import { useEffect, useRef } from 'react'
-import Typed from 'typed.js'
-import ScrollReveal from 'scrollreveal'
+import { useEffect, useRef } from "react";
+import Typed from "typed.js";
+import ScrollReveal from "scrollreveal";
 
 const Home = () => {
-  const typedElementRef = useRef(null)
-  const typedInstanceRef = useRef(null)
+  const typedElementRef = useRef(null);
+  const typedInstanceRef = useRef(null);
 
   useEffect(() => {
     if (typedElementRef.current) {
       typedInstanceRef.current = new Typed(typedElementRef.current, {
-        strings: ['Developer'],
+        strings: ["Developer"],
         loop: true,
         typeSpeed: 100,
         backSpeed: 80,
         backDelay: 2000,
-      })
+      });
     }
 
     return () => {
       if (typedInstanceRef.current) {
-        typedInstanceRef.current.destroy()
+        typedInstanceRef.current.destroy();
       }
-    }
-  }, [])
+    };
+  }, []);
 
   useEffect(() => {
     const sr = ScrollReveal({
-      origin: 'top',
-      distance: '80px',
+      origin: "top",
+      distance: "80px",
       duration: 2000,
       reset: true,
-    })
+    });
 
-    sr.reveal('.featured-text-card', {})
-    sr.reveal('.featured-name', { delay: 100 })
-    sr.reveal('.featured-text-info', { delay: 200 })
-    sr.reveal('.featured-text-btn', { delay: 200 })
-    sr.reveal('.social_icons', { delay: 200 })
-    sr.reveal('.featured-image', { delay: 300 })
-  }, [])
+    sr.reveal(".featured-text-card", {});
+    sr.reveal(".featured-name", { delay: 100 });
+    sr.reveal(".featured-text-info", { delay: 200 });
+    sr.reveal(".featured-text-btn", { delay: 200 });
+    sr.reveal(".social_icons", { delay: 200 });
+    sr.reveal(".featured-image", { delay: 300 });
+  }, []);
 
   const handleScrollDown = (e) => {
-    e.preventDefault()
-    const element = document.getElementById('about')
+    e.preventDefault();
+    const element = document.getElementById("about");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <section className="featured-box" id="home">
@@ -55,12 +55,14 @@ const Home = () => {
           <span>AmirReza Noori</span>
         </div>
         <div className="featured-name">
-          <p>I'm <span className="typedText" ref={typedElementRef}></span></p>
+          <p>
+            I'm <span className="typedText" ref={typedElementRef}></span>
+          </p>
         </div>
         <div className="featured-text-info">
           <p>
-            Experienced frontend developer with a passion for creating visually stunning
-            and user-friendly websites.
+            Experienced FullStack developer with a passion for creating visually
+            stunning and user-friendly websites.
           </p>
         </div>
         <div className="featured-text-btn">
@@ -116,8 +118,7 @@ const Home = () => {
         </a>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Home
-
+export default Home;
