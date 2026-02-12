@@ -2,11 +2,11 @@
   "name": "resume",
   "version": "1.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "react-scripts start",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+},
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
